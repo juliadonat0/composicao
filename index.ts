@@ -1,3 +1,5 @@
+// EXEMPLO 1
+
 export class Vestuario {
     constructor(public modelo: string){}
 }
@@ -26,3 +28,30 @@ function main (){
     minhaBlusa.listarVestuario();
 }
 main ()
+
+
+//EXEMPLO 2
+export class Dedo {
+    constructor (public unha: boolean){}
+}
+
+export class Mao{
+    private dedos: Dedo[];
+
+    constructor(){
+        this.dedos = [new Dedo(true), new Dedo(false),new Dedo(true),new Dedo(true),new Dedo(true)];
+    }
+
+    verificarUnhasPintadas(){
+        for (const dedo of this.dedos){
+            console.log (`O dedo ${dedo.unha} está pintada`);
+        }
+    }
+}
+
+function pintar (){
+    const pintura = new Mao();
+    pintura.verificarUnhasPintadas();
+}
+
+pintar()
