@@ -1,7 +1,7 @@
 // EXEMPLO 1
 
 export class Vestuario {
-    constructor(public modelo: string){}
+    constructor(public modelo: string) { }
 }
 
 export class TipoDeVestuario {
@@ -23,33 +23,39 @@ export class TipoDeVestuario {
     }
 }
 
-function main (){
+function main() {
     const minhaBlusa = new TipoDeVestuario();
     minhaBlusa.listarVestuario();
 }
-main ()
+main()
 
 
 //EXEMPLO 2
 export class Dedo {
-    constructor (public unha: boolean){}
+    constructor(public unha: boolean) { }
 }
 
-export class Mao{
+export class Mao {
     private dedos: Dedo[];
 
-    constructor(){
-        this.dedos = [new Dedo(true), new Dedo(false),new Dedo(true),new Dedo(true),new Dedo(true)];
+    constructor() {
+        this.dedos = [new Dedo(true), new Dedo(false), new Dedo(true), new Dedo(true), new Dedo(true)];
     }
 
-    verificarUnhasPintadas(){
-        for (const dedo of this.dedos){
-            console.log (`O dedo ${dedo.unha} está pintada`);
+    verificarUnhasPintadas() {
+        for (const dedo of this.dedos) {
+            if (dedo.unha) {
+                console.log(`A unha está pintada`)
+            } else {
+                console.log(`A unha não está pintada`)
+            }
         }
+
     }
 }
 
-function pintar (){
+
+function pintar() {
     const pintura = new Mao();
     pintura.verificarUnhasPintadas();
 }
